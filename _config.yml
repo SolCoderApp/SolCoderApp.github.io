@@ -1,8 +1,105 @@
-title: SolCoder
-description: AI Code Editor that Helps Solana Developers Build Faster
-theme: jekyll-theme-midnight
-show_downloads: false
+# title: SolCoder
+# description: AI Code Editor that Helps Solana Developers Build Faster
+# theme: jekyll-theme-midnight
+# show_downloads: false
 
-# Custom variables
-github_username: SolCoderApp
-twitter_username: SolCoder_
+# # Custom variables
+# github_username: SolCoderApp
+# twitter_username: SolCoder_
+
+# _config.yml
+title: SolCoder
+description: AI-Powered Solana Development Environment
+baseurl: ""
+url: "https://solcoder.github.io"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Theme settings
+theme_settings:
+  # Meta
+  title: SolCoder
+  favicon: favicon.ico
+  description_short: AI-Powered Solana Dev Environment
+  
+  # Header and footer text
+  header_text: >
+    Helping Solana Developers Build Faster
+  header_feature_image: assets/images/banner.jpg
+  footer_text: >
+    Powered by cutting-edge AI technology
+
+  # Social
+  github: "solcoder"
+  twitter: "solcoder"
+  discord: "solcoder"
+
+# SASS settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Collections
+collections:
+  features:
+    output: true
+    permalink: /:collection/:name
+  docs:
+    output: true
+    permalink: /docs/:path/
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /blog/:title
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Additional settings
+timezone: UTC
+encoding: "utf-8"
+repository: solcoder/solcoder.github.io
+
+# Analytics (if needed)
+google_analytics: 
+
+# SEO settings
+twitter:
+  username: solcoder
+  card: summary_large_image
+
+social:
+  name: SolCoder
+  links:
+    - https://twitter.com/solcoder
+    - https://github.com/solcoder
+    - https://discord.gg/solcoder
+
+# Gemfile
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.2.0"
+gem "jekyll-seo-tag"
+gem "jekyll-sitemap"
+gem "jekyll-feed"
+gem "webrick", "~> 1.7"
