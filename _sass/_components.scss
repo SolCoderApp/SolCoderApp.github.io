@@ -1,0 +1,218 @@
+// Hero Section
+.hero {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(145deg, $darker-bg, rgba($solana-purple, 0.1));
+  padding: $spacing-unit * 2;
+  
+  &__content {
+    max-width: 800px;
+    
+    h1 {
+      font-size: clamp(3rem, 8vw, 5rem);
+      margin-bottom: $spacing-unit;
+    }
+    
+    p {
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      color: $gray-text;
+      margin-bottom: $spacing-unit * 2;
+    }
+  }
+}
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  
+  &--primary {
+    background: linear-gradient(120deg, $solana-purple, $solana-magenta);
+    color: $light-text;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($solana-purple, 0.3);
+    }
+  }
+  
+  &--secondary {
+    background: transparent;
+    border: 2px solid $solana-purple;
+    color: $light-text;
+    
+    &:hover {
+      background: rgba($solana-purple, 0.1);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Feature Cards
+.features {
+  padding: $spacing-unit * 4 0;
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $spacing-unit * 2;
+  }
+  
+  &__card {
+    background: rgba($light-text, 0.03);
+    border-radius: 16px;
+    padding: $spacing-unit * 2;
+    border: 1px solid rgba($light-text, 0.1);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      background: rgba($light-text, 0.05);
+    }
+    
+    .icon {
+      font-size: 2.5rem;
+      margin-bottom: $spacing-unit;
+      background: linear-gradient(120deg, $solana-purple, $solana-magenta);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+// Code Block Styling
+.code-block {
+  background: $darker-bg;
+  border-radius: 8px;
+  padding: $spacing-unit;
+  margin: $spacing-unit 0;
+  overflow-x: auto;
+  
+  pre {
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+  }
+  
+  code {
+    color: $light-text;
+  }
+}
+
+// Timeline Component
+.timeline {
+  position: relative;
+  padding: $spacing-unit * 4 0;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, $solana-purple, $solana-magenta);
+  }
+  
+  &__item {
+    margin-bottom: $spacing-unit * 4;
+    width: 50%;
+    padding: 0 $spacing-unit * 2;
+    position: relative;
+    
+    &:nth-child(odd) {
+      margin-left: 50%;
+      
+      &::before {
+        left: -6px;
+      }
+    }
+    
+    &:nth-child(even) {
+      &::before {
+        right: -6px;
+      }
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      background: $solana-magenta;
+      border-radius: 50%;
+    }
+  }
+}
+
+// Cards
+.card {
+  background: rgba($light-text, 0.03);
+  border-radius: 16px;
+  padding: $spacing-unit * 2;
+  margin-bottom: $spacing-unit;
+  border: 1px solid rgba($light-text, 0.1);
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+  
+  &__title {
+    color: $solana-purple;
+    margin-bottom: $spacing-unit;
+  }
+  
+  &__content {
+    color: $gray-text;
+  }
+}
+
+// Form Elements
+.form-group {
+  margin-bottom: $spacing-unit;
+  
+  label {
+    display: block;
+    margin-bottom: $spacing-unit / 2;
+    color: $gray-text;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid rgba($light-text, 0.1);
+    background: rgba($light-text, 0.03);
+    color: $light-text;
+    font-family: $base-font-family;
+    
+    &:focus {
+      outline: none;
+      border-color: $solana-purple;
+    }
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
